@@ -1,0 +1,57 @@
+<div class="register-container">
+    <h1>Welcome to register in JCars</h1>
+    <h2>{{ message() }}</h2>
+
+    <form [formGroup]="userRegisterForm" (submit)="handleUserSubmit()">
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" value="name" formControlName="name">
+            @if(userRegisterForm.get("name")?.invalid && userRegisterForm.get("name")?.touched){
+                <p class="error">Name is required and must be less than 100 characters.</p>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="email">Email</label>
+            <input type="text" value="email" formControlName="email">
+            @if(userRegisterForm.get("email")?.invalid && userRegisterForm.get("email")?.touched){
+                <p class="error">Email is required, must be a valid email format and less than 40 characters.</p>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="password">Password</label>
+            <input type="password" value="password" formControlName="password">
+            @if(userRegisterForm.get("password")?.invalid && userRegisterForm.get("password")?.touched){
+                <p class="error">Password is required and must be between 8 and 20 characters.</p>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" value="birthdate" formControlName="birthdate">
+            @if(userRegisterForm.get("birthdate")?.invalid && userRegisterForm.get("birthdate")?.touched){
+                <p class="error">Birthdate is required.</p>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="document">Document (optional)</label>
+            <input type="text" value="document" formControlName="document">
+            @if(userRegisterForm.get("document")?.invalid && userRegisterForm.get("document")?.touched){
+                <p class="error">Document must be less than 13 characters.</p>
+            }
+        </fieldset>
+
+        <fieldset>
+            <label for="phone">Phone (optional)</label>
+            <input type="text" value="phone" formControlName="phone">
+            @if(userRegisterForm.get("phone")?.invalid && userRegisterForm.get("phone")?.touched){
+                <p class="error">Phone must be less than 15 characters.</p>
+            }
+        </fieldset>
+
+        <button type="submit" [disabled]="userRegisterForm.invalid">Register</button>
+    </form>
+</div>
+
