@@ -7,7 +7,7 @@ import Car from '../../Models/Car';
   providedIn: 'root',
 })
 export class CarService {
-  private apiURL = 'http://localhost:8080/JCars/api/car';
+  private apiURL = 'https://cars-ecommerce-backend.onrender.com/JCars/api/car';
 
   constructor(private http: HttpClient ){}
 

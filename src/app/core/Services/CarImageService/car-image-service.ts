@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CarImageService {
-  private apiURL = 'http://localhost:8080/JCars/api/car-image';
+  private apiURL = 'https://cars-ecommerce-backend.onrender.com/JCars/api/car-image';
 
   constructor(private http: HttpClient){}
 

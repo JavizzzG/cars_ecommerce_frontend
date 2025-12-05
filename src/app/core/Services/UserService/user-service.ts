@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = "http://localhost:8080/JCars/api/user";
+  private apiUrl = "https://cars-ecommerce-backend.onrender.com/JCars/api/user";
 
   constructor(private http: HttpClient){}
 
