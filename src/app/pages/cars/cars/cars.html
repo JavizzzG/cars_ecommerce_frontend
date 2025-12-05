@@ -1,0 +1,25 @@
+<app-navbar-no-auth></app-navbar-no-auth>
+
+<div class="cars-container">
+  <h2>Encuentra el carro que estabas buscando</h2>
+
+  <div class="cars-grid">
+    @for(car of cars(); track car.id) {
+      <div class="car-card">
+        <div class="car-image">
+          <img [src]="car.image" alt="Imagen del carro">
+        </div>
+
+        <div class="car-info">
+          <h3>{{ car.name }}</h3>
+          <p class="model-year">{{ car.model }} · {{ car.year }}</p>
+          <p class="price">${{ car.price }}</p>
+
+          <button class="view-btn">Ver detalles</button>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>
+

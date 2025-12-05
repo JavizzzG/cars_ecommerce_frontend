@@ -16,8 +16,12 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
-  getUserById(id: number){
-    return this.http.get(`${this.apiUrl}/${id}`);
+  getUserById(id: number): Observable<User>{
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
+
+  getUserByEmail(email: string): Observable<User>{
+    return this.http.get<User>(`${this.apiUrl}/email/${email}`);
   }
 
   createUser(user: User): Observable<User>{

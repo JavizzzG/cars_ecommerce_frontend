@@ -1,14 +1,26 @@
-<h1>JCars Login</h1>
-<h2></h2>
-<form>
-    <fieldset>
-        <label for="email">Email</label>
-        <input type="text" value="email">
-    </fieldset>
+<app-navbar-no-auth></app-navbar-no-auth>
+<div class="login-container">
+    <h1>JCars Login</h1>
+    <h2>{{ message() }}</h2>
 
-    <fieldset>
-        <label for="password">Password</label>
-        <input type="password" value="password">
-    </fieldset>
+    <form [formGroup]="userLoginForm" (submit)="handleUserLogin()">
+        <fieldset>
+            <label for="email">Email</label>
+            <input type="text" value="email" formControlName="email">
+            @if(userLoginForm.get('email')?.touched && userLoginForm.get('email')?.invalid) {
+                <p class="error">Email is required</p>
+            }
+        </fieldset>
 
-    <button type="submit">Login</button>
+        <fieldset>
+            <label for="password">Password</label>
+            <input type="password" value="password" formControlName="password">
+            @if(userLoginForm.get('password')?.touched && userLoginForm.get('password')?.invalid) {
+                <p class="error">Password is required</p>
+            }
+        </fieldset>
+
+        <button type="submit" [disabled]="userLoginForm.invalid">Login</button>
+    </form>
+</div>
+
