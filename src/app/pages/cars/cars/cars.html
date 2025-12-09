@@ -15,7 +15,7 @@
           <p class="model-year">{{ car.model }} · {{ car.year }}</p>
           <p class="price">${{ car.price }}</p>
 
-          <button class="view-btn">Ver detalles</button>
+          <button class="view-btn" (click)="seeDetails(car.id!)">Ver detalles</button>
         </div>
       </div>
     }

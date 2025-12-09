@@ -1,0 +1,135 @@
+/* ============================
+   CONTAINER
+============================ */
+.car-detail-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.car-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1e2a45;
+  margin-bottom: 40px;
+}
+
+/* ============================
+   LAYOUT CONTENT
+============================ */
+.car-detail-content {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ============================
+   IMAGE GALLERY
+============================ */
+
+.car-images {
+  flex: 1;
+  min-width: 330px;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.thumbnail-images {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.thumbnail-image img {
+  width: 90px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail-image img:hover {
+  border-color: #1e90ff;
+  transform: scale(1.05);
+}
+
+/* ============================
+   INFO PANEL
+============================ */
+
+.car-info {
+  flex: 1;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  border: 1px solid #e5e9f0;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  min-width: 330px;
+}
+
+.car-info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e2a45;
+  margin-bottom: 20px;
+}
+
+/* GRID FOR CAR SPECS */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 22px;
+}
+
+.info-grid p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #4c566a;
+}
+
+.info-grid strong {
+  color: #1e2a45;
+}
+
+/* DESCRIPTION SECTION */
+.description {
+  margin-top: 30px;
+}
+
+.description h3 {
+  font-size: 1.4rem;
+  color: #1e2a45;
+  margin-bottom: 8px;
+}
+
+.description p {
+  color: #4c566a;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .car-detail-content {
+    flex-direction: column;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .car-title {
+    font-size: 2.2rem;
+  }
+}

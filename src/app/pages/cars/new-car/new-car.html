@@ -1,0 +1,115 @@
+<app-navbar-no-auth></app-navbar-no-auth>
+
+<div class="car-create-container">
+
+  <h1 class="title">{{ message() }}</h1>
+
+  <form [formGroup]="carForm" (submit)="handleCarSubmit()" class="car-create-form">
+
+    <div class="form-grid">
+
+      <fieldset>
+        <label>Name</label>
+        <input type="text" formControlName="name">
+      </fieldset>
+
+      <fieldset>
+        <label>Model</label>
+        <input type="text" formControlName="model">
+      </fieldset>
+
+      <fieldset>
+        <label>Year</label>
+        <input type="text" formControlName="year">
+      </fieldset>
+
+      <fieldset>
+        <label>Brand ID</label>
+        <input type="number" formControlName="fkidBrand">
+      </fieldset>
+
+      <fieldset>
+        <label>Price</label>
+        <input type="number" formControlName="price">
+      </fieldset>
+
+      <fieldset>
+        <label>Is for sale?</label>
+        <input type="number" formControlName="for_sale">
+      </fieldset>
+
+      <fieldset>
+        <label>Doors</label>
+        <input type="text" formControlName="door">
+      </fieldset>
+
+      <fieldset>
+        <label>Seats</label>
+        <input type="text" formControlName="seat">
+      </fieldset>
+
+      <fieldset>
+        <label>Motor</label>
+        <input type="text" formControlName="motor">
+      </fieldset>
+
+      <fieldset>
+        <label>Horse Power</label>
+        <input type="number" formControlName="hp">
+      </fieldset>
+
+      <fieldset>
+        <label>Kilometers</label>
+        <input type="number" formControlName="km">
+      </fieldset>
+
+      <fieldset>
+        <label>Max Velocity</label>
+        <input type="number" formControlName="max_velocity">
+      </fieldset>
+
+      <fieldset>
+        <label>Torque</label>
+        <input type="number" formControlName="torque">
+      </fieldset>
+
+      <fieldset>
+        <label>Fuel type</label>
+        <input type="number" formControlName="fuel">
+      </fieldset>
+
+      <fieldset>
+        <label>Is Hybrid?</label>
+        <input type="number" formControlName="hybrid">
+      </fieldset>
+
+      <fieldset>
+        <label>Autonomy</label>
+        <input type="number" formControlName="autonomy">
+      </fieldset>
+
+      <fieldset>
+        <label>Brake</label>
+        <input type="number" formControlName="brake">
+      </fieldset>
+
+      <fieldset>
+        <label>Modified</label>
+        <input type="number" formControlName="modified">
+      </fieldset>
+
+      <fieldset class="full-width">
+        <label>Description</label>
+        <input type="text" formControlName="description">
+      </fieldset>
+
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="carForm.invalid">
+      Create
+    </button>
+
+  </form>
+
+</div>
+

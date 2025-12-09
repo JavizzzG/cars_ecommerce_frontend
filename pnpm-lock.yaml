@@ -43,7 +43,7 @@ importers:
         version: 2.8.1
       vercel:
         specifier: ^49.1.0
-        version: 49.1.0(encoding@0.1.13)(rollup@4.52.3)(typescript@5.9.3)
+        version: 49.1.1(encoding@0.1.13)(rollup@4.52.3)(typescript@5.9.3)
     devDependencies:
       '@angular/build':
         specifier: ^20.3.10
@@ -1910,8 +1910,8 @@ packages:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
     engines: {node: ^4.5.0 || >= 5.9}
 
-  baseline-browser-mapping@2.9.2:
-    resolution: {integrity: sha512-PxSsosKQjI38iXkmb3d0Y32efqyA0uW4s41u4IVBsLlWLhCiYNpH/AfNOVWRqCQBlD8TFJTz6OUWNd4DFJCnmw==}
+  baseline-browser-mapping@2.9.4:
+    resolution: {integrity: sha512-ZCQ9GEWl73BVm8bu5Fts8nt7MHdbt5vY9bP6WGnUh+r3l8M7CgfyTlwsgCbMC66BNxPr6Xoce3j66Ms5YUQTNA==}
     hasBin: true
 
   beasties@0.3.5:
@@ -3887,8 +3887,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vercel@49.1.0:
-    resolution: {integrity: sha512-7nGmUQyPQhpfv1LfAQ3bLmJ4gf4Zf1+18B1uvau+xiTUUWee2fnPoaDU+35dsi3JhaC1SxZUdfzTVFIxoKwiQQ==}
+  vercel@49.1.1:
+    resolution: {integrity: sha512-dWvdrTc+hiMlT77mU3uyk2PBZ981ARKEq2FhoKp65CV0LOB0bBy9nq/JJTsKXGfVlFCifdm0Eik8MV1A+zI5wg==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -5841,7 +5841,7 @@ snapshots:
 
   base64id@2.0.0: {}
 
-  baseline-browser-mapping@2.9.2: {}
+  baseline-browser-mapping@2.9.4: {}
 
   beasties@0.3.5:
     dependencies:
@@ -5908,7 +5908,7 @@ snapshots:
 
   browserslist@4.28.1:
     dependencies:
-      baseline-browser-mapping: 2.9.2
+      baseline-browser-mapping: 2.9.4
       caniuse-lite: 1.0.30001759
       electron-to-chromium: 1.5.266
       node-releases: 2.0.27
@@ -8013,7 +8013,7 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vercel@49.1.0(encoding@0.1.13)(rollup@4.52.3)(typescript@5.9.3):
+  vercel@49.1.1(encoding@0.1.13)(rollup@4.52.3)(typescript@5.9.3):
     dependencies:
       '@vercel/backends': 0.0.15(encoding@0.1.13)(rollup@4.52.3)(typescript@5.9.3)
       '@vercel/blob': 1.0.2

@@ -1,0 +1,77 @@
+.car-create-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0a3d62;
+}
+
+.car-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+label {
+  font-weight: 600;
+  color: #0a3d62;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px 14px;
+  border: 1px solid #c8d6e5;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+input:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.submit-btn {
+  background: #1e90ff;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
