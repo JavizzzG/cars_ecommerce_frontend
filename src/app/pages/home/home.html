@@ -5,38 +5,90 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Encuentra el carro perfecto para ti</h1>
-      <p>Explora cientos de vehículos disponibles, compara precios y encuentra tu próximo carro ideal.</p>
+      <h1>Discover Your Next Car</h1>
+      <p>Browse a wide selection of vehicles, compare prices, and find the perfect car that fits your lifestyle.</p>
 
       <button routerLink="/cars" class="hero-btn">
-        Explorar Carros
+        Explore Cars
       </button>
     </div>
 
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Carro moderno">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Modern Car">
     </div>
   </section>
 
   <!-- FEATURES -->
   <section class="features">
     <div class="feature-card">
-      <span class="icon">🚗</span>
-      <h3>Gran variedad</h3>
-      <p>Encuentra vehículos de todas las marcas, modelos y precios.</p>
+      <div class="icon">
+        <!-- Search Icon -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M21 21L15 15M10 17C6.134 17 3 13.866 3 10C3 6.134 6.134 3 10 3C13.866 3 17 6.134 17 10C17 13.866 13.866 17 10 17Z" 
+           stroke="#1e90ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Powerful Search</h3>
+      <p>Quickly find vehicles by brand, model, year or price range through our optimized search system.</p>
     </div>
 
     <div class="feature-card">
-      <span class="icon">💰</span>
-      <h3>Precios competitivos</h3>
-      <p>Compra con confianza gracias a nuestras publicaciones verificadas.</p>
+      <div class="icon">
+        <!-- Shield Icon -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z"
+          stroke="#1e90ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Verified Listings</h3>
+      <p>All vehicle listings are validated to ensure real, reliable and trusted information.</p>
     </div>
 
     <div class="feature-card">
-      <span class="icon">🔒</span>
-      <h3>Transacciones seguras</h3>
-      <p>Tu información está protegida en todo momento.</p>
+      <div class="icon">
+        <!-- Dollar Icon -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <path d="M12 1V23M17 5H9.5C7.57 5 6 6.57 6 8.5C6 10.43 7.57 12 9.5 12H14.5C16.43 12 18 13.57 18 15.5C18 17.43 16.43 19 14.5 19H6" 
+           stroke="#1e90ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Smart Pricing</h3>
+      <p>Compare different vehicles and get the best deals based on market insights and verified sellers.</p>
     </div>
   </section>
 
+  <!-- CATEGORIES SHOWCASE -->
+  <section class="categories">
+    <h2>Browse by Category</h2>
+    <div class="category-grid">
+
+      <div class="category-card">
+        <img src="https://imgs.search.brave.com/oVC4Nj03osUjOmKkAKAkfNHkT0f2QAlcyjCQUkssG-M/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjIx/NDc1NzM0L3Bob3Rv/L21vZGVybi1jb21w/YWN0LWNhcnMtb24t/dGhlLXBhcmtpbmcu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXJnRXJEREFBemNZ/ci1wMlg4LUZPdmpS/ekpONHRrTUNpQ0Vy/cEk0ZHU2V0k9" alt="Sedan">
+        <h4>Sedans</h4>
+        <p>Comfortable, efficient and perfect for everyday city driving.</p>
+      </div>
+
+      <div class="category-card">
+        <img src="https://imgs.search.brave.com/eouPP1zyPq_c3vzrzlZe-Y-NbURkWseKIF3_X4MSsuU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI4/NDYyMjUwOC9waG90/by9zdXYtY2Fycy1v/bi1hLXBhcmtpbmcu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVMxUHo1X0hSbmNj/MXZINldyNFhDYjFv/bHM5TWh5NUtBWUZn/WC1iX1dPYjA9" alt="SUV">
+        <h4>SUVs</h4>
+        <p>Spacious, powerful and ideal for family and off-road adventures.</p>
+      </div>
+
+      <div class="category-card">
+        <img src="https://imgs.search.brave.com/y_qqBbdILtn8veJNKE7B_jPJzMFjFGNtUfblOpz-aQM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM2/NzAwNzQ3OC9waG90/by9zcG9ydHMtY2Fy/cy1hcmUtd2FpdGlu/Zy1wYXJrZWQtaW4t/bGluZS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9YmYwSG8x/OUxIRThKUkUtZmZB/VnRlQ2IxdkRvRXFP/djFqZTBaSWtJNXhS/ST0" alt="Sports Car">
+        <h4>Sports Cars</h4>
+        <p>Experience unmatched performance, speed and modern design.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta">
+    <h2>Ready to Find Your Next Vehicle?</h2>
+    <p>Start exploring our marketplace and choose from hundreds of available cars.</p>
+    <button routerLink="/cars" class="cta-btn">Start Exploring</button>
+  </section>
+
 </div>
+

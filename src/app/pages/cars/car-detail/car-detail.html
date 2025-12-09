@@ -1,0 +1,84 @@
+<app-navbar-no-auth></app-navbar-no-auth>
+
+<div class="car-detail-container">
+
+  <!-- Title -->
+  <h1 class="car-title">{{ carComplete()?.name }}</h1>
+
+  <!-- Main Content -->
+  <div class="car-detail-content">
+
+    <!-- IMAGE GALLERY -->
+    <div class="car-images">
+
+      <!-- Main Image -->
+      <div class="main-image">
+        <img [src]="carImages()[0]" alt="Main car image">
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="thumbnail-images">
+        @for (img of carImages(); track img) {
+          <div class="thumbnail-image">
+            <img [src]="img" alt="Car image">
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- INFO PANEL -->
+    @if(!carComplete()) {
+      <p>Loading car details...</p>
+    } @else {
+
+    <div class="car-info">
+
+      <h2>Specifications</h2>
+
+      <div class="info-grid">
+
+        <p><strong>Model:</strong> {{ carComplete()?.model }}</p>
+        <p><strong>Year:</strong> {{ carComplete()?.year }}</p>
+        <p><strong>Price:</strong> ${{ carComplete()?.price }}</p>
+
+        <p><strong>Doors:</strong> {{ carComplete()?.door }}</p>
+        <p><strong>Seats:</strong> {{ carComplete()?.seat }}</p>
+        <p><strong>Horsepower:</strong> {{ carComplete()?.hp }} HP</p>
+
+        <p><strong>Mileage:</strong> {{ carComplete()?.km }} km</p>
+        <p><strong>Top Speed:</strong> {{ carComplete()?.max_velocity }} km/h</p>
+        <p><strong>Torque:</strong> {{ carComplete()?.torque }}</p>
+
+        <p><strong>Fuel:</strong>
+          {{
+            carComplete()?.fuel === 1 ? 'Gasoline' :
+            carComplete()?.fuel === 2 ? 'Diesel' :
+            carComplete()?.fuel === 3 ? 'Electric' :
+            'Hybrid'
+          }}
+        </p>
+
+        <p><strong>Is Hybrid:</strong> {{ carComplete()?.hybrid ? 'Yes' : 'No' }}</p>
+
+        <p><strong>Range:</strong> {{ carComplete()?.autonomy }} km</p>
+
+        <p><strong>Brake System:</strong>
+          {{
+            carComplete()?.brake === 1 ? 'Mechanical' :
+            carComplete()?.brake === 2 ? 'Hydraulic' :
+            'Electronic'
+          }}
+        </p>
+
+        <p><strong>Modified:</strong> {{ carComplete()?.modified ? 'Yes' : 'No' }}</p>
+      </div>
+
+      <div class="description">
+        <h3>Description</h3>
+        <p>{{ carComplete()?.description || 'No description available.' }}</p>
+      </div>
+
+    </div>
+    }
+  </div>
+</div>
