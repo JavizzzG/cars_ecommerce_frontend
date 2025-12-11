@@ -119,6 +119,22 @@
   line-height: 1.5;
 }
 
+.order-button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.order-button:hover {
+  background: #1d4ed8;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .car-detail-content {

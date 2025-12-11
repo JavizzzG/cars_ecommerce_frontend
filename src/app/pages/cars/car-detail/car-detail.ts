@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CarDetailService } from '../../../core/Services/CarDetailService/car-detail-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import CarComplete from '../../../core/Models/CarComplete';
 import { switchMap, map } from 'rxjs'; // 1. Importar switchMap
 import { CarService } from '../../../core/Services/CarService/car-service';
@@ -18,6 +18,7 @@ export class CarDetail implements OnInit {
   private carService = inject(CarService);
   private carImageService = inject(CarImageService);
   private carDetailService = inject(CarDetailService);
+  private router = inject(Router);
   
   // Signals inicializados
   carComplete = signal<CarComplete | null>(null);
@@ -62,5 +63,9 @@ export class CarDetail implements OnInit {
         this.carImages.set(urls);
       }
     );
+  }
+
+  orderCar(id: number){
+    this.router.navigate(['/new-order/', id]);
   }
 }
