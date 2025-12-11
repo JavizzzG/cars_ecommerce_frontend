@@ -9,7 +9,7 @@ export default interface CarComplete {
     year: string,
     fkid_brand: number,
     price: number,
-    for_sale: number,
+    for_sale: boolean,
     fkid_user: number
     door: string | null,
     seat: string | null,

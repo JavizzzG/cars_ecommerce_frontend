@@ -1,5 +1,5 @@
 export default interface CarImage {
-    id: number,
-    fkid_car: number,
+    id?: number,
+    fkidCar: number,
     image: string
 }
