@@ -1,0 +1,86 @@
+.payment-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #0a3d62;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #3c6382;
+  margin-bottom: 20px;
+}
+
+.payment-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0a3d62;
+}
+
+.form-field input,
+.form-field select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  background: #f9f9f9;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #0a3d62;
+  background: #fff;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: #0a3d62;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.submit-btn:hover:not([disabled]) {
+  background: #07426e;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background: #7f8c8d;
+  cursor: not-allowed;
+}

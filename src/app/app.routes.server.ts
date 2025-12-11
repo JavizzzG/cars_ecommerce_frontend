@@ -5,6 +5,11 @@ export const serverRoutes: ServerRoute[] = [
     path: "car-detail/:id",
     renderMode: RenderMode.Server
   },
+
+  {
+    path: "new-order/:id",
+    renderMode: RenderMode.Server
+  },
   
   {
     path: '**',

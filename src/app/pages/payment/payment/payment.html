@@ -1,0 +1,53 @@
+<app-navbar-no-auth></app-navbar-no-auth>
+
+<div class="payment-container">
+
+  <h1 class="title">Payment Page</h1>
+  <h2 class="subtitle">{{ message() }}</h2>
+
+  <form [formGroup]="paymentForm" (submit)="handlePayment()" class="payment-form">
+
+    <div class="form-field">
+      <label>ID Order</label>
+      <input type="number" formControlName="fkidOrder" placeholder="Enter the order ID">
+    </div>
+
+    <div class="form-field">
+      <label>Amount</label>
+      <input type="number" formControlName="amount" placeholder="Enter the amount">
+    </div>
+
+    <div class="form-field">
+      <label>Select Bank</label>
+      <select formControlName="fkcodeBank">
+        <option value="001">Bancolombia</option>
+        <option value="002">Davivienda</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label>Card Number</label>
+      <input type="text" formControlName="number" placeholder="•••• •••• •••• ••••">
+    </div>
+
+    <div class="form-grid">
+
+      <div class="form-field">
+        <label>CVC</label>
+        <input type="text" formControlName="cvc" placeholder="123">
+      </div>
+
+      <div class="form-field">
+        <label>Expire Date</label>
+        <input type="text" formControlName="expire_date" placeholder="MM/YY">
+      </div>
+
+    </div>
+
+    <button type="submit" [disabled]="paymentForm.invalid" class="submit-btn">
+      Pay Now
+    </button>
+
+  </form>
+</div>
+

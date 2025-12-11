@@ -1,0 +1,63 @@
+<app-navbar-no-auth></app-navbar-no-auth>
+
+@if (orders().length === 0) {
+  <h2 class="loading">Cargando datos...</h2>
+}
+@else {
+
+  <div class="orders-container">
+
+    @for (order of orders()!; track order.id) {
+
+      <div class="order-card">
+
+        <div class="order-image">
+          <img [src]="order.image" alt="">
+        </div>
+
+        <div class="order-info">
+
+          <div class="order-row">
+            <span class="label">Car name:</span>
+            <span>{{ order.name }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Amount:</span>
+            <span>{{ order.amount }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Date:</span>
+            <span>{{ order.date }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Address:</span>
+            <span>{{ order.address }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Phone:</span>
+            <span>{{ order.phone }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Status:</span>
+            <span class="status">{{ order.status }}</span>
+          </div>
+
+          <div class="order-row">
+            <span class="label">Price:</span>
+            <span>${{ order.price }}</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+}
+
