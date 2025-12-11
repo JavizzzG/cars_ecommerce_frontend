@@ -37,7 +37,21 @@ export class CarDetail implements OnInit {
 
           return {
             ...car,
-            ...detailObj
+            fkid_brand: car.fkidBrand,
+            fkid_user: car.fkidUser,
+            door: detailObj.door,
+            seat: detailObj.seat,
+            motor: detailObj.motor,
+            hp: detailObj.hp,
+            km: detailObj.km,
+            max_velocity: detailObj.max_velocity,
+            torque: detailObj.torque,
+            fuel: detailObj.fuel,
+            hybrid: detailObj.hybrid,
+            autonomy: detailObj.autonomy,
+            brake: detailObj.brake,
+            modified: detailObj.modified,
+            description: detailObj.description
           };
         })
       );

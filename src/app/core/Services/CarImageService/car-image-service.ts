@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class CarImageService {
   private apiURL = 'https://cars-ecommerce-backend.onrender.com/JCars/api/car-image';
-  // private apiURL = "http://localhost:8080/JCars/api/car-image";
 
   constructor(private http: HttpClient){}
 
@@ -16,7 +15,7 @@ export class CarImageService {
     return this.http.get<CarImage[]>(`${this.apiURL}/car/${carId}`);
   }
 
-  createCarImage(carImage: FormData): Observable<CarImage>{
+  createCarImage(carImage: CarImage): Observable<CarImage>{
     return this.http.post<CarImage>(this.apiURL, carImage);
   }
 

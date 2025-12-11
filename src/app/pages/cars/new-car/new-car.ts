@@ -5,6 +5,8 @@ import { CarService } from '../../../core/Services/CarService/car-service';
 import { CarDetailService } from '../../../core/Services/CarDetailService/car-detail-service';
 import Car from '../../../core/Models/Car';
 import CarDetail from '../../../core/Models/CarDetail';
+import { CarImageService } from '../../../core/Services/CarImageService/car-image-service';
+import CarImage from '../../../core/Models/CarImage';
 
 @Component({
   selector: 'app-new-car',
@@ -17,6 +19,7 @@ export class NewCar {
   fb = inject(FormBuilder)
   carService = inject(CarService)
   carDetailService = inject(CarDetailService)
+  carImageService = inject(CarImageService)
 
 
   carForm = this.fb.nonNullable.group({
@@ -38,7 +41,8 @@ export class NewCar {
     autonomy: [0, [Validators.required, Validators.min(0)]],
     brake: [0, [Validators.required, Validators.min(1)]],
     modified: [0, [Validators.required]],
-    description: ["", [Validators.maxLength(255)]]
+    description: ["", [Validators.maxLength(255)]],
+    image: [""],
   })
 
   handleCarSubmit(){
@@ -72,8 +76,15 @@ export class NewCar {
         this.carDetailService.createCarDetail(carCompleteToService).subscribe({
           next: (carComplete) => {
             this.message.set("Car created succesfully")
+            let imageToService: CarImage = {
+          fkidCar: car.id!,
+          image: this.carForm.getRawValue().image!
+        }
+        this.carImageService.createCarImage(imageToService).subscribe()
           }
         })
+
+        
       },
       error: (err) => {
         this.message.set("Car not created" + err)
