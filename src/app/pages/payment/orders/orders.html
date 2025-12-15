@@ -4,9 +4,21 @@
 }
 @else {
 
+  <div class="filter-container">
+    <label for="status-filter">Filter by status:</label>
+    <select id="status-filter" (change)="onStatusFilterChange($event)">
+      <option value="0">All</option>
+      <option value="1">Completed</option>
+      <option value="2">In process</option>
+      <option value="3">Canceled</option>
+      <option value="4">Unpaid</option>
+    </select>
+  </div>
+
   <div class="orders-container">
 
     @for (order of orders()!; track order.id) {
+      @if(order.status == statusFilter() || statusFilter() == 0){
 
       <div class="order-card">
 
@@ -38,7 +50,7 @@
 
           <div class="order-row">
             <span class="label">Status:</span>
-            <span class="status">{{ order.status }}</span>
+            <span class="status">{{ order.status == 1 ? 'Completed' : order.status == 2 ? 'In process' : order.status == 3 ? 'Canceled' : 'Unpaid'}}</span>
           </div>
 
           <div class="order-row">
@@ -57,6 +69,7 @@
         
 
       </div>
+      }
 
     }
 

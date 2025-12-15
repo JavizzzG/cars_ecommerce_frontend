@@ -17,15 +17,17 @@
 .car-create-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
+/* Grid */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 18px;
 }
 
+/* Fieldset base */
 fieldset {
   display: flex;
   flex-direction: column;
@@ -33,45 +35,69 @@ fieldset {
   padding: 0;
 }
 
+/* Label */
 label {
   font-weight: 600;
   color: #0a3d62;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
-input {
+/* INPUTS + SELECTS (unificados) */
+input,
+select {
   padding: 10px 14px;
   border: 1px solid #c8d6e5;
   border-radius: 10px;
   font-size: 14px;
-  transition: border 0.2s;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input:focus {
+/* Quitar estilos feos por defecto del select */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='14' height='8' viewBox='0 0 14 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%230a3d62' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  padding-right: 40px;
+}
+
+/* Focus */
+input:focus,
+select:focus {
   border-color: #1e90ff;
+  box-shadow: 0 0 0 2px rgba(30,144,255,0.15);
   outline: none;
 }
 
+/* Full width */
 .full-width {
   grid-column: 1 / -1;
 }
 
+/* Botón */
 .submit-btn {
   background: #1e90ff;
   color: white;
-  padding: 12px;
-  font-size: 18px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #1c7ed6;
 }
 
 .submit-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-.submit-btn:hover:not(:disabled) {
-  opacity: 0.85;
 }
