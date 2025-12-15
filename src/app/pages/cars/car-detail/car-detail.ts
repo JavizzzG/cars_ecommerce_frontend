@@ -5,11 +5,10 @@ import CarComplete from '../../../core/Models/CarComplete';
 import { switchMap, map } from 'rxjs'; // 1. Importar switchMap
 import { CarService } from '../../../core/Services/CarService/car-service';
 import { CarImageService } from '../../../core/Services/CarImageService/car-image-service';
-import { NavbarNoAuth } from '../../../shared/components/navbars/navbar-no-auth/navbar-no-auth';
 
 @Component({
   selector: 'app-car-detail',
-  imports: [NavbarNoAuth],
+  imports: [],
   templateUrl: './car-detail.html',
   styleUrl: './car-detail.scss',
 })

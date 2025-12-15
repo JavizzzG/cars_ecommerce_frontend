@@ -3,7 +3,7 @@ export default interface Payment {
     fkidOrder: number,
     amount: number,
     fkcodeBank: string,
-    status: number, // 1 Aproved, 2. In process, 3. Canceled
+    status: number, // 1 Aproved, 2. In process, 3. Rejected
     created_at?: Date,
     updated_at?: Date
 }

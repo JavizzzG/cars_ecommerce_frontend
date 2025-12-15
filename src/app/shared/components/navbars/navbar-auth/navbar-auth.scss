@@ -45,6 +45,7 @@
   transition: background 0.2s ease;
 }
 
+
 .navbar-links a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -53,6 +54,23 @@
 .navbar-links a.active {
   background: #2563eb;
 }
+
+.navbar-links button {
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.navbar-links button:hover {
+  background: #1d4ed8;
+}
+
 
 /* Botón menú (mobile) */
 .menu-btn {

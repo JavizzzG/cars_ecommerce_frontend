@@ -18,6 +18,6 @@ export const routes: Routes = [
     {path:"new-car", component:NewCar},
     {path:"order", component:Orders},
     {path:"new-order/:id", component:NewOrder},
-    {path:"payment", component:Payment}
+    {path:"payment/:id", component:Payment}
     
 ];

@@ -1,7 +1,6 @@
-<app-navbar-no-auth></app-navbar-no-auth>
 
 @if (orders().length === 0) {
-  <h2 class="loading">Cargando datos...</h2>
+  <h2 class="loading">Loading orders...</h2>
 }
 @else {
 
@@ -20,11 +19,6 @@
           <div class="order-row">
             <span class="label">Car name:</span>
             <span>{{ order.name }}</span>
-          </div>
-
-          <div class="order-row">
-            <span class="label">Amount:</span>
-            <span>{{ order.amount }}</span>
           </div>
 
           <div class="order-row">
@@ -52,7 +46,15 @@
             <span>${{ order.price }}</span>
           </div>
 
+          <div class="order-actions">
+          @if (order.status == 4) {
+            <button (click)="goToPayment(order.id!)" class="order-button">Proceed to Payment</button>
+          }
         </div>
+
+        </div>
+
+        
 
       </div>
 
