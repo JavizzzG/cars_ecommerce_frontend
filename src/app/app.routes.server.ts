@@ -14,7 +14,7 @@ export const serverRoutes: ServerRoute[] = [
   {
     path: "payment/:id",
     renderMode: RenderMode.Server
-  }
+  },
   
   {
     path: '**',
