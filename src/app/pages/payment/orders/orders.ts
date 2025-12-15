@@ -4,7 +4,7 @@ import { CarService } from '../../../core/Services/CarService/car-service';
 import { from, map, mergeMap } from 'rxjs';
 import { CarImageService } from '../../../core/Services/CarImageService/car-image-service';
 import OrderComplete from '../../../core/Models/OrderComplete';
-import { Router } from '@angular/router';
+import { Event, Router } from '@angular/router';
 import { UserService } from '../../../core/Services/UserService/user-service';
 
 @Component({
@@ -21,6 +21,7 @@ export class Orders implements OnInit{
   orders = signal<OrderComplete[]>([]);
   private router = inject(Router);
   userId = this.userService.getUser()!.id!;
+  statusFilter = signal<number>(0);
 
   ngOnInit(): void {
     this.orders.set([])
@@ -52,5 +53,9 @@ export class Orders implements OnInit{
   goToPayment(id: number){
     return this.router.navigate(["/payment/", id])
   }
-  
+
+  onStatusFilterChange($event: any){
+    $event as HTMLOptionElement
+    this.statusFilter.set(Number($event.target.value));
+  }
 }

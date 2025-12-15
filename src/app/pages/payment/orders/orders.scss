@@ -14,6 +14,70 @@
   padding: 20px;
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 30px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+}
+
+/* Label */
+.filter-container label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a3d62;
+  white-space: nowrap;
+}
+
+/* Select */
+.filter-container select {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #c8d6e5;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='14' height='8' viewBox='0 0 14 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%230a3d62' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  padding-right: 40px;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus */
+.filter-container select:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.15);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .filter-container label {
+    font-size: 13px;
+  }
+}
+
+
 .order-card {
   display: flex;
   gap: 20px;
