@@ -3,11 +3,14 @@ import { inject, Injectable, signal } from '@angular/core';
 import User from '../../Models/User';
 import { Observable } from 'rxjs';
 import Login from '../../Models/Login';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+
+  router = inject(Router);
 
   private apiUrl = "https://cars-ecommerce-backend.onrender.com/JCars/api/user";
 

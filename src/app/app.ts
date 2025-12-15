@@ -15,7 +15,7 @@ export class App {
   protected readonly title = signal('cars_ecommerce_frontend');
 
   isAuth(){
-    if(this.userService.isLoguedIn()){
+    if(this.userService.getUser() !== null && this.userService.getUser() !== undefined){
       return true;
     }else{
       return false;

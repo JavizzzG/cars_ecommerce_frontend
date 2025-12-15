@@ -8,6 +8,7 @@ import { NewCar } from './pages/cars/new-car/new-car';
 import { Orders } from './pages/payment/orders/orders';
 import { Payment } from './pages/payment/payment/payment';
 import { NewOrder } from './pages/payment/new-order/new-order';
+import { authGuard } from './core/Guards/auth.guard';
 
 export const routes: Routes = [
     {path:"", component:Home},
@@ -15,9 +16,9 @@ export const routes: Routes = [
     {path:"login", component:Login},
     {path:"cars", component:Cars},
     {path:"car-detail/:id", component:CarDetail},
-    {path:"new-car", component:NewCar},
-    {path:"order", component:Orders},
-    {path:"new-order/:id", component:NewOrder},
-    {path:"payment/:id", component:Payment}
+    {path:"new-car", component:NewCar, canActivate:[authGuard]},
+    {path:"order", component:Orders, canActivate:[authGuard]},
+    {path:"new-order/:id", component:NewOrder, canActivate:[authGuard]},
+    {path:"payment/:id", component:Payment, canActivate:[authGuard]},
     
 ];
