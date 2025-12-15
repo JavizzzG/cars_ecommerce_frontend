@@ -1,14 +1,15 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { OrderService } from '../../../core/Services/OrderService/order-service';
-import { NavbarNoAuth } from '../../../shared/components/navbars/navbar-no-auth/navbar-no-auth';
 import { CarService } from '../../../core/Services/CarService/car-service';
-import { from, map, merge, mergeMap } from 'rxjs';
+import { from, map, mergeMap } from 'rxjs';
 import { CarImageService } from '../../../core/Services/CarImageService/car-image-service';
 import OrderComplete from '../../../core/Models/OrderComplete';
+import { Router } from '@angular/router';
+import { UserService } from '../../../core/Services/UserService/user-service';
 
 @Component({
   selector: 'app-orders',
-  imports: [NavbarNoAuth],
+  imports: [],
   templateUrl: './orders.html',
   styleUrl: './orders.scss',
 })
@@ -16,8 +17,10 @@ export class Orders implements OnInit{
   orderService = inject(OrderService);
   carService = inject(CarService)
   carImageService = inject(CarImageService)
+  userService = inject(UserService)
   orders = signal<OrderComplete[]>([]);
-  userId = 1
+  private router = inject(Router);
+  userId = this.userService.getUser()!.id!;
 
   ngOnInit(): void {
     this.orders.set([])
@@ -44,6 +47,10 @@ export class Orders implements OnInit{
       this.orders.update((array) => [...array, next])
     }
     )
+  }
+
+  goToPayment(id: number){
+    return this.router.navigate(["/payment/", id])
   }
   
 }

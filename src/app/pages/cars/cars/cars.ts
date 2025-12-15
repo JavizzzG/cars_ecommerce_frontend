@@ -1,5 +1,4 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { NavbarNoAuth } from '../../../shared/components/navbars/navbar-no-auth/navbar-no-auth';
 import { CarService } from '../../../core/Services/CarService/car-service';
 import Car from '../../../core/Models/Car';
 import CarImage from '../../../core/Models/CarImage';
@@ -9,7 +8,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars',
-  imports: [NavbarNoAuth],
+  imports: [],
   templateUrl: './cars.html',
   styleUrl: './cars.scss',
 })

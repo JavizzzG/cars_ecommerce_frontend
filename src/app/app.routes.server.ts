@@ -10,6 +10,11 @@ export const serverRoutes: ServerRoute[] = [
     path: "new-order/:id",
     renderMode: RenderMode.Server
   },
+
+  {
+    path: "payment/:id",
+    renderMode: RenderMode.Server
+  },
   
   {
     path: '**',

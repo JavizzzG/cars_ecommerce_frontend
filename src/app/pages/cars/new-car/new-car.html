@@ -1,4 +1,3 @@
-<app-navbar-no-auth></app-navbar-no-auth>
 
 <div class="car-create-container">
 
@@ -24,8 +23,12 @@
       </fieldset>
 
       <fieldset>
-        <label>Brand ID</label>
-        <input type="number" formControlName="fkidBrand">
+        <label>Brand</label>
+        <select formControlName="fkidBrand">
+          @for(brand of brands(); track brand.id){
+            <option [value]="brand.id">{{ brand.name }}</option>
+          }
+        </select>
       </fieldset>
 
       <fieldset>
@@ -35,17 +38,42 @@
 
       <fieldset>
         <label>Is for sale?</label>
-        <input type="number" formControlName="for_sale">
+        <select formControlName="for_sale">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <label>Doors</label>
-        <input type="text" formControlName="door">
+        <select formControlName="door">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <label>Seats</label>
-        <input type="text" formControlName="seat">
+        <select formControlName="seat">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
       </fieldset>
 
       <fieldset>
@@ -75,12 +103,20 @@
 
       <fieldset>
         <label>Fuel type</label>
-        <input type="number" formControlName="fuel">
+        <select formControlName="fuel">
+          <option value="1">Gasoline</option>
+          <option value="2">Diesel</option>
+          <option value="3">Electric</option>
+          <option value="4">Hybrid</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <label>Is Hybrid?</label>
-        <input type="number" formControlName="hybrid">
+        <select formControlName="hybrid">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
       </fieldset>
 
       <fieldset>
@@ -90,12 +126,19 @@
 
       <fieldset>
         <label>Brake</label>
-        <input type="number" formControlName="brake">
+        <select formControlName="brake">
+          <option value="1">Mechanical</option>
+          <option value="2">Hydraulic</option>
+          <option value="3">Electric</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <label>Modified</label>
-        <input type="number" formControlName="modified">
+        <select formControlName="modified">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
       </fieldset>
 
       <fieldset class="full-width">

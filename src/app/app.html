@@ -1,1 +1,7 @@
+@if(isAuth()){
+    <app-navbar-auth></app-navbar-auth>
+}@else{
+    <app-navbar-no-auth></app-navbar-no-auth>
+}
+
 <router-outlet />

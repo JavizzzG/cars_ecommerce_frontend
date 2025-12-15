@@ -1,43 +1,57 @@
 
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NavbarNoAuth } from '../../../shared/components/navbars/navbar-no-auth/navbar-no-auth';
 import { OrderService } from '../../../core/Services/OrderService/order-service';
 import OrderInterface from '../../../core/Models/Order';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../../core/Services/UserService/user-service';
+import { CarService } from '../../../core/Services/CarService/car-service';
+import Car from '../../../core/Models/Car';
 
 @Component({
   selector: 'app-new-order',
-  imports: [NavbarNoAuth, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './new-order.html',
   styleUrl: './new-order.scss',
 })
-export class NewOrder {
+export class NewOrder implements OnInit {
   fb = inject(FormBuilder)
   orderService = inject(OrderService)
+  carService = inject(CarService)
+  userService = inject(UserService)
   private route = inject(ActivatedRoute);
+
+  car = signal<Car>({} as Car);
 
   message = signal<string>("");
 
   newOrderForm = this.fb.nonNullable.group({
-    fkidUser: [0, Validators.required],
-    amount: [0, Validators.required],
-    date: ['', Validators.required],
     address: ['', Validators.required],
     phone: ['', Validators.required],
-    status: [2, Validators.required]
   })
+
+  ngOnInit(): void {
+    this.carService.getCarById(Number(this.route.snapshot.paramMap.get('id'))).subscribe(
+      (next) => {
+        this.car.set(next);
+      },
+      (error) => {
+        this.message.set("Error fetching car details");
+      }
+    );
+
+  }
 
   handleOrder() {
     const orderData = this.newOrderForm.getRawValue();
     let order: OrderInterface = {
-      fkidUser: orderData.fkidUser,
+      fkidUser: this.userService.getUser()!.id!,
       fkidCar: Number(this.route.snapshot.paramMap.get('id')),
-      amount: orderData.amount,
-      date: new Date(orderData.date),
+      amount: this.car().price,
+      date: new Date(),
       address: orderData.address,
       phone: orderData.phone,
-      status: orderData.status
+      status: 4 // Unpaid
     }
 
     this.orderService.createOrder(order).subscribe(

@@ -2,11 +2,10 @@ import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import User from '../../../core/Models/User';
 import { UserService } from '../../../core/Services/UserService/user-service';
-import { NavbarNoAuth } from '../../../shared/components/navbars/navbar-no-auth/navbar-no-auth';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, NavbarNoAuth],
+  imports: [ReactiveFormsModule],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
