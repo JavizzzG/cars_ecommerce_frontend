@@ -10,16 +10,25 @@
       <fieldset>
         <label>Name</label>
         <input type="text" formControlName="name">
+        @if(carForm.controls.name.invalid && carForm.controls.name.touched){
+          <span class="error-message">Name is required and must be less than 100 characters.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Model</label>
         <input type="text" formControlName="model">
+        @if(carForm.controls.model.invalid && carForm.controls.model.touched){
+          <span class="error-message">Model is required and must be less than 100 characters.</span>
+        }
       </fieldset>
 
       <fieldset>
-        <label>Year</label>
+        <label>Year (YYYY)</label>
         <input type="text" formControlName="year">
+        @if(carForm.controls.year.invalid && carForm.controls.year.touched){
+          <span class="error-message">Year is required. The format must be like this (2020)</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -29,11 +38,17 @@
             <option [value]="brand.id">{{ brand.name }}</option>
           }
         </select>
+        @if(carForm.controls.fkidBrand.invalid && carForm.controls.fkidBrand.touched){
+          <span class="error-message">Brand is required.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Price</label>
         <input type="number" formControlName="price">
+        @if(carForm.controls.price.invalid && carForm.controls.price.touched){
+          <span class="error-message">Price is required and must be more than 0</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -42,6 +57,9 @@
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
+        @if(carForm.controls.for_sale.invalid && carForm.controls.for_sale.touched){
+          <span class="error-message">This field is required.</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -79,26 +97,41 @@
       <fieldset>
         <label>Motor</label>
         <input type="text" formControlName="motor">
+        @if(carForm.controls.motor.invalid && carForm.controls.motor.touched){
+          <span class="error-message">Motor name must be less than 20 characters.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Horse Power</label>
         <input type="number" formControlName="hp">
+        @if(carForm.controls.hp.invalid && carForm.controls.hp.touched){
+          <span class="error-message">Horse Power is required.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Kilometers</label>
         <input type="number" formControlName="km">
+        @if(carForm.controls.km.invalid && carForm.controls.km.touched){
+          <span class="error-message">Kilometers is required.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Max Velocity</label>
         <input type="number" formControlName="max_velocity">
+        @if(carForm.controls.max_velocity.invalid && carForm.controls.max_velocity.touched){
+          <span class="error-message">Max Velocity is required.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Torque</label>
         <input type="number" formControlName="torque">
+        @if(carForm.controls.torque.invalid && carForm.controls.torque.touched){
+          <span class="error-message">Torque is required.</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -109,6 +142,9 @@
           <option value="3">Electric</option>
           <option value="4">Hybrid</option>
         </select>
+        @if(carForm.controls.fuel.invalid && carForm.controls.fuel.touched){
+          <span class="error-message">Fuel type is required.</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -117,11 +153,17 @@
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
+        @if(carForm.controls.hybrid.invalid && carForm.controls.hybrid.touched){
+          <span class="error-message">This field is required.</span>
+        }
       </fieldset>
 
       <fieldset>
         <label>Autonomy</label>
         <input type="number" formControlName="autonomy">
+        @if(carForm.controls.autonomy.invalid && carForm.controls.autonomy.touched){
+          <span class="error-message">Autonomy is required.</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -131,6 +173,9 @@
           <option value="2">Hydraulic</option>
           <option value="3">Electric</option>
         </select>
+        @if(carForm.controls.brake.invalid && carForm.controls.brake.touched){
+          <span class="error-message">Brake type is required.</span>
+        }
       </fieldset>
 
       <fieldset>
@@ -139,11 +184,17 @@
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
+        @if(carForm.controls.modified.invalid && carForm.controls.modified.touched){
+          <span class="error-message">This field is required.</span>
+        }
       </fieldset>
 
       <fieldset class="full-width">
         <label>Description</label>
         <input type="text" formControlName="description">
+        @if(carForm.controls.description.invalid && carForm.controls.description.touched){
+          <span class="error-message">Description is can't have more than 255 characters.</span>
+        }
       </fieldset>
 
       <fieldset class="full-width">

@@ -12,11 +12,17 @@
         <option value="001">Bancolombia</option>
         <option value="002">Davivienda</option>
       </select>
+      @if(paymentForm.controls.fkcodeBank.invalid && paymentForm.controls.fkcodeBank.touched){
+        <span class="error-message">Bank selection is required.</span>
+      }
     </div>
 
     <div class="form-field">
       <label>Card Number</label>
       <input type="text" formControlName="number" placeholder="•••• •••• •••• ••••">
+      @if(paymentForm.controls.number.invalid && paymentForm.controls.number.touched){
+        <span class="error-message">Card number is required and must be 16 digits.</span>
+      }
     </div>
 
     <div class="form-grid">
@@ -24,11 +30,17 @@
       <div class="form-field">
         <label>CVC</label>
         <input type="text" formControlName="cvc" placeholder="123">
+        @if(paymentForm.controls.cvc.invalid && paymentForm.controls.cvc.touched){
+          <span class="error-message">CVC is required and must be 3 digits.</span>
+        }
       </div>
 
       <div class="form-field">
         <label>Expire Date</label>
         <input type="text" formControlName="expire_date" placeholder="MM/YY">
+        @if(paymentForm.controls.expire_date.invalid && paymentForm.controls.expire_date.touched){
+          <span class="error-message">Expire date is required and must be in MM/YY format.</span>
+        }
       </div>
 
       <div class="form-field">
@@ -38,6 +50,9 @@
         <option value="2">In process</option>
         <option value="3">Rejected</option>
       </select>
+      @if(paymentForm.controls.status.invalid && paymentForm.controls.status.touched){
+        <span class="error-message">Status selection is required.</span>
+      }
     </div>
 
     </div>
